@@ -1,15 +1,17 @@
 # Quantum Script Extension Version
 
-VersionCompare;\
-VersionCompare.Major;\
-VersionCompare.Minor;\
-VersionCompare.Patch;\
-VersionCompare.Build;\
-VersionCompare.MajorMinor;\
-VersionCompare.MajorMinorPatch;\
-VersionCompare.All;\
-Version;\
+```javascript
+VersionCompare;
+VersionCompare.Major;
+VersionCompare.Minor;
+VersionCompare.Patch;
+VersionCompare.Build;
+VersionCompare.MajorMinor;
+VersionCompare.MajorMinorPatch;
+VersionCompare.All;
+Version;
 Version.compare(strA,strB,type);
+```
 
 ## License
 
