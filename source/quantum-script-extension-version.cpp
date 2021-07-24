@@ -39,7 +39,7 @@ namespace Quantum {
 					int result;
 					int type = Application::Version::CompareMajorMinorPatch;
 
-					if(!VariableUndefined::isVariableUndefined(arguments->index(2))) {
+					if(!TIsTypeExact<VariableUndefined>(arguments->index(2))) {
 						type = (arguments->index(2))->toIndex();
 					};
 
