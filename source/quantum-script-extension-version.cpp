@@ -14,7 +14,7 @@
 #include "quantum-script-extension-version-license.hpp"
 #include "quantum-script-extension-version.hpp"
 #ifndef QUANTUM_SCRIPT_EXTENSION_VERSION_NO_VERSION
-#include "quantum-script-extension-version-version.hpp"
+#	include "quantum-script-extension-version-version.hpp"
 #endif
 
 #include "quantum-script-variablestring.hpp"
@@ -39,11 +39,11 @@ namespace Quantum {
 					int result;
 					int type = Application::Version::CompareMajorMinorPatch;
 
-					if(!TIsTypeExact<VariableUndefined>(arguments->index(2))) {
+					if (!TIsTypeExact<VariableUndefined>(arguments->index(2))) {
 						type = (arguments->index(2))->toIndex();
 					};
 
-					if(Application::Version::compare((arguments->index(0))->toString(), (arguments->index(1))->toString(), result, type)) {
+					if (Application::Version::compare((arguments->index(0))->toString(), (arguments->index(1))->toString(), result, type)) {
 						return VariableNumber::newVariable(result);
 					};
 
@@ -65,7 +65,6 @@ namespace Quantum {
 					executive->setExtensionVersion(extensionId, Extension::Version::Version::versionWithBuild());
 #endif
 					executive->setExtensionPublic(extensionId, true);
-
 
 					//
 					char buffer[128];
@@ -101,4 +100,3 @@ extern "C" QUANTUM_SCRIPT_EXTENSION_VERSION_EXPORT void quantumScriptExtension(Q
 	Quantum::Script::Extension::Version::initExecutive(executive, extensionId);
 };
 #endif
-

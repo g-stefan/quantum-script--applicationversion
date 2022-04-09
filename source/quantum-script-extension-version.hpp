@@ -11,23 +11,23 @@
 #define QUANTUM_SCRIPT_EXTENSION_VERSION_HPP
 
 #ifndef QUANTUM_SCRIPT_HPP
-#include "quantum-script.hpp"
+#	include "quantum-script.hpp"
 #endif
 
 #ifndef QUANTUM_SCRIPT_EXTENSION_VERSION__EXPORT_HPP
-#include "quantum-script-extension-version--export.hpp"
+#	include "quantum-script-extension-version--export.hpp"
 #endif
 
 #ifndef QUANTUM_SCRIPT_EXTENSION_VERSION_COPYRIGHT_HPP
-#include "quantum-script-extension-version-copyright.hpp"
+#	include "quantum-script-extension-version-copyright.hpp"
 #endif
 
 #ifndef QUANTUM_SCRIPT_EXTENSION_VERSION_LICENSE_HPP
-#include "quantum-script-extension-version-license.hpp"
+#	include "quantum-script-extension-version-license.hpp"
 #endif
 
 #ifndef QUANTUM_SCRIPT_EXTENSION_VERSION_VERSION_HPP
-#include "quantum-script-extension-version-version.hpp"
+#	include "quantum-script-extension-version-version.hpp"
 #endif
 
 namespace Quantum {
@@ -46,4 +46,3 @@ namespace Quantum {
 };
 
 #endif
-
