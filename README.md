@@ -9,12 +9,11 @@ VersionCompare.Build;
 VersionCompare.MajorMinor;
 VersionCompare.MajorMinorPatch;
 VersionCompare.All;
-Version;
-Version.compare(strA,strB,type);
+ApplicationVersion;
+ApplicationVersion.compare(strA,strB,type);
 ```
 
 ## License
 
-Copyright (c) Grigore Stefan
-
+Copyright (c) 2022 Grigore Stefan
 Licensed under the [MIT](LICENSE) license.
