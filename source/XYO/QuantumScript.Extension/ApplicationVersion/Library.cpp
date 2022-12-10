@@ -66,7 +66,6 @@ namespace XYO::QuantumScript::Extension::ApplicationVersion {
 		//
 		executive->compileStringX("var ApplicationVersion={};");
 		executive->setFunction2("ApplicationVersion.compare(strA,strB,type)", applicationVersionCompare);
-
 	};
 
 };
