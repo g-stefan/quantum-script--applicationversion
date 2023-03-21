@@ -37,7 +37,7 @@ namespace XYO::QuantumScript::Extension::ApplicationVersion {
 	void initExecutive(Executive *executive, void *extensionId) {
 
 		String info = "ApplicationVersion\r\n";
-		info << ApplicationVersion::License::shortLicense();
+		info << ApplicationVersion::License::shortLicense().c_str();
 
 		executive->setExtensionName(extensionId, "ApplicationVersion");
 		executive->setExtensionInfo(extensionId, info);
