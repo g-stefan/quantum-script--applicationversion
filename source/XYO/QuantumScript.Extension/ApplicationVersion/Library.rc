@@ -8,4 +8,4 @@
 #include <XYO/QuantumScript.Extension/ApplicationVersion/Copyright.rh>
 #include <XYO/QuantumScript.Extension/ApplicationVersion/Version.rh>
 
-XYO_APPLICATION_VERSION_INFO(XYO_QUANTUMSCRIPT_EXTENSION_APPLICATIONVERSION,"quantum-script--applicationversion.dll","Quantum Script Extension ApplicationVersion")
+XYO_PLATFORM_VERSION_INFO(XYO_QUANTUMSCRIPT_EXTENSION_APPLICATIONVERSION,"quantum-script--applicationversion.dll","Quantum Script Extension ApplicationVersion")
