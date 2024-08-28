@@ -70,8 +70,10 @@ namespace XYO::QuantumScript::Extension::ApplicationVersion {
 
 };
 
-#ifdef XYO_PLATFORM_COMPILE_DYNAMIC_LIBRARY
+#ifndef XYO_QUANTUMSCRIPT_EXTENSION_APPLICATIONVERSION_LIBRARY
+#	ifdef XYO_PLATFORM_COMPILE_DYNAMIC_LIBRARY
 extern "C" XYO_QUANTUMSCRIPT_EXTENSION_APPLICATIONVERSION_EXPORT void quantumScriptExtension(XYO::QuantumScript::Executive *executive, void *extensionId) {
 	XYO::QuantumScript::Extension::ApplicationVersion::initExecutive(executive, extensionId);
 };
+#	endif
 #endif
