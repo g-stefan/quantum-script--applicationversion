@@ -11,6 +11,25 @@
 
 namespace XYO::QuantumScript::Extension::ApplicationVersion {
 
+	// A fractional number is ambiguous as a version: 1.10 and 1.1 are the same number,
+	// the trailing zeros of the source are lost before the call. Accept only integers.
+	static bool getVersionString(Variable *value, String &version) {
+		if (TIsType<VariableNumber>(value)) {
+			Number number = value->toNumber();
+			if (isnan(number) || isinf(number)) {
+				return false;
+			};
+			if (number != floor(number)) {
+				return false;
+			};
+			if ((number < INT_MIN) || (number > INT_MAX)) {
+				return false;
+			};
+		};
+		version = value->toString();
+		return true;
+	};
+
 	static TPointer<Variable> applicationVersionCompare(VariableFunction *function, Variable *this_, VariableArray *arguments) {
 #ifdef QUANTUMSCRIPT_DEBUG_RUNTIME
 		printf("- application-version-compare\n");
@@ -18,12 +37,21 @@ namespace XYO::QuantumScript::Extension::ApplicationVersion {
 
 		int result;
 		int type = System::ApplicationVersion::CompareMajorMinorPatch;
+		String versionA;
+		String versionB;
 
 		if (!TIsTypeExact<VariableUndefined>(arguments->index(2))) {
 			type = (arguments->index(2))->toIndex();
 		};
 
-		if (System::ApplicationVersion::compare((arguments->index(0))->toString(), (arguments->index(1))->toString(), result, type)) {
+		if (!getVersionString(arguments->index(0), versionA)) {
+			return Context::getValueUndefined();
+		};
+		if (!getVersionString(arguments->index(1), versionB)) {
+			return Context::getValueUndefined();
+		};
+
+		if (System::ApplicationVersion::compare(versionA, versionB, result, type)) {
 			return VariableNumber::newVariable(result);
 		};
 
